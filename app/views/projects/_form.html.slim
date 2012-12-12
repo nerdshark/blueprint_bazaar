@@ -1,0 +1,68 @@
+.row.content
+  .quarter
+    h3 Creating a New Project
+    |
+      We're really glad that you want to share your great ideas with the rest of the world. Tell us a little bit about your project so that we can help others find it as easily as possible
+    br
+    br
+    h5 Guidelines
+    small
+      |
+        Blueprint Bazaar is intended for sharing free and open source (FOSS) designs for physical objects that can be produced using automated fabrication tools, such as 3D printers, CNC routers and mills, and other computer-controlled manufacturing devices. We want to allow as many kinds of objects as possible, but unfortunately we have to disallow some types of projects. These include:
+    small
+      ul
+        li
+          small Projects with non-FOSS licenses
+        li
+          small Projects that infringe on the copyrights of others
+          ul
+            li
+              small designs covered under fair use exceptions, such as parodies, are allowed
+        li
+          small Functional weapons or designs that are intended to be converted to functional weapons.
+          ul
+            li
+              small Non-functional props, toys, airsoft/paintball, and the like are acceptable.
+        li
+          small Drug paraphenalia
+
+
+  .threequarter
+    = form_for @project, :html => { :class => 'forms' } do |f|
+      .row
+        = f.hidden_field :creator, value: current_user._id
+        #step1
+          h3 Step 1: Tell us about the project!
+          .row
+            .half
+              b What is the project called?
+              br
+              = f.text_field :title
+            .half
+              b Where is the project's torrent file located?
+              br
+              = f.text_field :torrent_url
+          .row
+
+            .half
+              b What kind of project is it?
+              br
+          .row
+            b Give us a brief description of it:
+            br
+            = f.text_area :description, :cols => 40, :rows => 3;
+
+
+        #step2
+          h3 Step 2: Add some pictures!
+        #step3
+          h3 Step 3: Read our awesome legal docs!
+      .row
+        = link_to 'Cancel', projects_path, :class => 'btn', style: "float:left;"
+        = f.submit nil, class: 'btn', id: "submitProject", style: "float:right;display:none;"
+        a.btn#next href="#" onClick="nextStep()" style="float:right" Next
+        a.btn#prev href="#" onClick="previousStep()" style="float:right" Previous
+
+
+
+

@@ -1,0 +1,38 @@
+= content_for :content do
+  h1 Projects
+  table.striped
+    thead.thead-black
+      tr
+        /th= model_class.human_attribute_name(:id)
+        th Title
+        /th= model_class.human_attribute_name(:description)
+        /th= model_class.human_attribute_name(:instructions)
+        th Creator
+        /
+        /th= model_class.human_attribute_name(:repo_url)
+        /th= model_class.human_attribute_name(:image_url)
+        th Upvotes
+        th Downvotes
+        /th= model_class.human_attribute_name(:featured_on)
+        th Created On
+        th Actions
+    tbody
+      - @projects.each do |project|
+        tr
+          /td= link_to project.id, project_path(project)
+          td= project.title
+          td= User.find(project.creator).username
+          /td= project.description
+          /td= project.instructions
+          /td= project.author
+          /td= project.repo_url
+          /td= project.image_url
+          td= project.upvotes
+          td= project.downvotes
+          /td= project.featured_on
+          /td= project.created_on
+          td
+            = link_to 'Edit', edit_project_path(project), :class => 'btn btn-small'
+            = link_to 'Destroy', project_path(project), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-small'
+
+  = link_to 'New', new_project_path, :class => 'btn'

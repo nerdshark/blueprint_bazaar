@@ -1,0 +1,20 @@
+project
+-------
+a project is the fundamental entity in blueprint bazaar. it represents a physical object or set of objects that can be made, typically via fabrication processes. they are created by *users* and are associated with a github repository which contain the versioned 3D models used to generate the tool paths for a fabrication tool. may alternatively be associated with a torrent. additionally, projects have a set of assembly instructions associated with them, as well as a set of required tools and additional parts. projects have a commenting system allowing *users* to discuss tips and tricks for assembly, as well as problems people are having, alternative methods of assembly and fabrication, and possible upgrades and alterations. *users* can add projects to their *Work Bench*. Projects can be categorized via a "category", for lack of a better term, and can also optionally be tagged with phrases that provide more in-depth searchable keywords.
+
+category
+--------
+a classification that associates related kinds of projects. categories are creatable only by administrators and are exposed via the project browsing and search interface and are displayed on the project's page in the details section
+
+tag
+---
+a plain-text word or phrase that provides a more in-depth searchable descriptive term for a project. tags can be added by admins, moderators, and the project creator. tags are shown for each project in the project and browsing view and on the project's page in the details section
+
+work bench
+----------
+this is a user's private area which allows them to keep track of which projects they're working on, which projects they've made or are currently making, and which step they're currently working on. users can take notes for each step, which allows them to remember if they're stuck somewhere, note problems that they're having, etc. the work bench also allows users to add which tools they have access to, which allows them to create filters for searching and browsing projects and to offer other users
+
+
+user
+----
+a person who uses blueprint bazaar and has created an account on the site. they can create and view projects and have one workbench. there can be special classes of users, particularly the admin user class, who has the ability to moderate, ban, and promote projects and other users. there is another class of user, moderator, which can moderate content and non-admin/non-moderator users.

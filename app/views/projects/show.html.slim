@@ -1,0 +1,64 @@
+- model_class = Project
+= content_for :content_header do
+  .twothird
+    .project-created-by
+      .project-info
+        .voting-mechanism
+          .arrow.up
+            = icon_tag "arrow-up"
+          .score
+            #upvotes
+              = @project.upvotes
+          .score
+            #difference
+              = @project.upvotes - @project.downvotes
+          .score
+            #downvotes
+              = @project.downvotes
+          .arrow.down
+            = icon_tag "arrow-down"
+        .avatar
+          a href="#"
+            img src="http://placehold.it/64x64"/
+        .project-info-text
+          h3 #{@project.title}
+          .project-creator
+            | Created by #{User.find(@project.creator).username}
+          .project-featured-on
+            - if @project.featured_at
+              | Featured on: #{@project.featured_at}
+
+  .push-right.third
+    .inner.row
+      .project-buttons
+        span.btn-group
+          button.btn.btn-large Download
+          button.btn.btn-large Visit Repository
+
+
+= content_for :content do
+  .row.content
+    .content-body
+      .row
+        .half
+          .row
+            img src="http://placehold.it/1280x800"
+          .row
+            .quarter
+              img src="http://placehold.it/1280x800"
+            .quarter
+              img src="http://placehold.it/1280x800"
+            .quarter
+              img src="http://placehold.it/1280x800"
+            .quarter
+              img src="http://placehold.it/1280x800"
+        .half
+          .row
+            = @project.description
+      .row
+        .half
+        .half
+          b
+            = model_class.human_attribute_name(:instructions) + ':'
+          br
+          /= @project.instructions

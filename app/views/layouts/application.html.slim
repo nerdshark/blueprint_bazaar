@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title Blueprint Bazaar
+
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    - if content_for? :stylesheets
+      = content_for :stylesheets
+    - if content_for? :javascript
+      = content_for :javascript
+  body
+    = render 'layouts/shared/header'
+    div
+      p.notice
+        = notice
+      p.alert
+        = alert
+    .page
+      .row
+        .fourfifth.centered
+          - if content_for? :content_header
+            .row
+              .content-header
+                = content_for :content_header
+          = content_for :content
+          .row.footer
+            footer
+              = render 'layouts/shared/footer'
