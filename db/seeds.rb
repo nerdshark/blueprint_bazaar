@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts 'SETTING UP DEFAULT USER LOGIN'
-user = User.create! :username => 'nerdshark', :email => 'dork.fish.wat@gmail.com', :password => 'herpderp', :password_confirmation => 'herpderp', :role => Project::ROLES[0]
-puts 'New user created: ' << user.name
-user2 = User.create! :name => 'moduser', :email => 'moduser@example.com', :password => 'please', :password_confirmation => 'please', :role => Project::ROLES[1]
-puts 'New user created: ' << user2.name
-user2 = User.create! :name => 'reguser', :email => 'reguser@example.com', :password => 'please', :password_confirmation => 'please', :role => Project::ROLES[2]
-puts 'New user created: ' << user2.nam
+user = User.create! :username => 'nerdshark', :email => 'dork.fish.wat@gmail.com', :password => 'herpderp', :password_confirmation => 'herpderp', :role => User::ROLES[0]
+puts 'New user created: ' << user.username
+user2 = User.create! :username => 'moduser', :email => 'moduser@example.com', :password => 'please', :password_confirmation => 'please', :role => User::ROLES[1]
+puts 'New user created: ' << user2.username
+user2 = User.create! :username => 'reguser', :email => 'reguser@example.com', :password => 'please', :password_confirmation => 'please', :role => User::ROLES[2]
+puts 'New user created: ' << user2.username
