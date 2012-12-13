@@ -19,9 +19,8 @@
     tbody
       - @projects.each do |project|
         tr
-          /td= link_to project.id, project_path(project)
-          td= project.title
-          td= User.find(project.creator).username
+          td= link_to project.title, project_path(project)
+          td= project.creator
           /td= project.description
           /td= project.instructions
           /td= project.author
@@ -30,7 +29,7 @@
           td= project.upvotes
           td= project.downvotes
           /td= project.featured_on
-          /td= project.created_on
+          td= project.created_at
           td
             = link_to 'Edit', edit_project_path(project), :class => 'btn btn-small'
             = link_to 'Destroy', project_path(project), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-small'

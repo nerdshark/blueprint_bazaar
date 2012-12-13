@@ -23,7 +23,7 @@
         .project-info-text
           h3 #{@project.title}
           .project-creator
-            | Created by #{User.find(@project.creator).username}
+            | Created by #{@project.creator}
           .project-featured-on
             - if @project.featured_at
               | Featured on: #{@project.featured_at}
@@ -54,11 +54,12 @@
               img src="http://placehold.it/1280x800"
         .half
           .row
+            h3 Introduction
             = @project.description
-      .row
+      /.row
         .half
         .half
           b
             = model_class.human_attribute_name(:instructions) + ':'
           br
-          /= @project.instructions
+          = @project.instructions

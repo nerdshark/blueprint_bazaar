@@ -9900,6 +9900,11 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
   }
 
 })( jQuery );
+(function() {
+
+
+
+}).call(this);
 /**
  * Created with JetBrains RubyMine.
  * User: nerdshark

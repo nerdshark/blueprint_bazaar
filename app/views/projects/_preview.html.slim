@@ -1,0 +1,14 @@
+.project-preview
+  .row
+    a href="#{project_path preview}"
+      h5= preview.title
+    | created by&nbsp
+    a href="#{user_path preview.creator}" = preview.creator
+  .row
+    a href="#{project_path(preview)}"
+      /- if preview.image_urls[0]
+        img src="#{preview.image_urls[0]}"
+      /- else
+      img src="http://placehold.it/150x150&text=Preview+Unavailable"
+
+

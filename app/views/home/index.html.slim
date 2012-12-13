@@ -1,0 +1,7 @@
+= content_for :content do
+  .row.content
+    .content-body
+      .row
+        h2 Recently Created Projects
+        = render partial: 'projects/preview', collection: @projects || "There are no projects to display."
+
