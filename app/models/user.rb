@@ -6,7 +6,8 @@ class User
   attr_accessible :_id, :email, :password, :password_confirmation
 
   field :_id, type: String
-  field :role, type: Symbol
+  field :role, type: Symbol, default: ROLES[2]
+  field :avatar_url, type: String
 
   validates_length_of :password, minimum: 3, message: "password must be at least 3 characters long", :if => :password
   validates_confirmation_of :password, message: "should match confirmation", :if => :password
