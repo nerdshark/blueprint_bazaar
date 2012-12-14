@@ -18,13 +18,19 @@ html
   body
     = render 'layouts/shared/header'
     div
-      p.notice
-        = notice
-      p.alert
-        = alert
+      - if flash[:notice]
+        p.notice
+          = notice
+      - if flash[:alert]
+        p.alert
+          = alert
     .page
       .row
         .fourfifth.centered
+          - if content_for? :content_menu
+            .row
+              .content-menu
+                = content_for :content_menu
           - if content_for? :content_header
             .row
               .content-header
