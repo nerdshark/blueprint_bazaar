@@ -9,10 +9,8 @@ class Project
     field :downvotes, type: Integer, default: 0
     field :torrent_url, type: String
     field :image_urls, type: Array
-    field :created_at, type: Time, default: Time.now
-    field :updated_at, type: Time, default: Time.now
     field :featured_at, type: Time
-    field :creator, type: Moped::BSON::ObjectId
+    field :creator, type: String
 
     # referenced relations
     #has_one :creator, :inverse_of => :user
