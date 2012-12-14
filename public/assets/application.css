@@ -1318,54 +1318,95 @@ a.error:hover {
 
 
  */
-
-
 body {
-    background-color:#269;
-    background-image: -moz-linear-gradient(rgba(255,255,255,0.3) 2px, transparent 2px),
-    -moz-linear-gradient(0, rgba(255,255,255,0.3) 2px, transparent 2px),
-    -moz-linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-    -moz-linear-gradient(0, rgba(255,255,255,.1) 1px, transparent 1px);
-    background-image: -o-linear-gradient(rgba(255,255,255,0.3) 2px, transparent 2px),
-    -o-linear-gradient(0, rgba(255,255,255,0.3) 2px, transparent 2px),
-    -o-linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-    -o-linear-gradient(0, rgba(255,255,255,.1) 1px, transparent 1px);
-    background-image: -webkit-linear-gradient(rgba(255,255,255,0.3) 2px, transparent 2px),
-    -webkit-linear-gradient(0, rgba(255,255,255,0.3) 2px, transparent 2px),
-    -webkit-linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-    -webkit-linear-gradient(0, rgba(255,255,255,.1) 1px, transparent 1px);
-    background-size:50px 50px, 50px 50px, 10px 10px,10px 10px;
-    background-position: -18px -18px, -2px -2px, -1px -1px, -1px -1px;
+  background-color: #269;
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.3) 2px, transparent 2px), -moz-linear-gradient(0, rgba(255, 255, 255, 0.3) 2px, transparent 2px), -moz-linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), -moz-linear-gradient(0, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.3) 2px, transparent 2px), -o-linear-gradient(0, rgba(255, 255, 255, 0.3) 2px, transparent 2px), -o-linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), -o-linear-gradient(0, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px), -webkit-linear-gradient(0, rgba(255, 255, 255, 0.2) 2px, transparent 2px), -webkit-linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), -webkit-linear-gradient(0, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px,10px 10px;
+  background-position: -18px -20px, -2px -2px, -1px -1px, -1px -1px;
 }
-
 .page {
-    overflow: auto;
+  overflow: auto;
 }
-
 .content {
-    padding: 20px;
+  padding: 20px;
 }
-
-.content-header, .content {
-    background-color: #eee;
-    height: 100%;
-    display: block;
-    margin-top: 1.5em;
-//margin-bottom: 1.5em;
-    border: 1px solid #ddd;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-//background: url(/rrstatic/img/portal/view-model/diag_patt_3px.png) top left repeat white;
-    -webkit-box-shadow: inset 0 0 0 4px #eee;
-    -moz-box-shadow: inset 0 0 0 4px #eee;
-    box-shadow: inset 0 0 0 4px #eee;
-    overflow: hidden;
-    *zoom: 1; }
+.content-header,
+.content {
+  background-color: #eee;
+  height: 100%;
+  display: block;
+  margin-top: 1.5em;
+  -webkit-box-shadow: inset 0 0 0 4px #eeeeee;
+  -moz-box-shadow: inset 0 0 0 4px #eeeeee;
+  box-shadow: inset 0 0 0 4px #eeeeee;
+  overflow: hidden;
+  *zoom: 1;
+}
 /*.content_header h1, .content_header h2, .content_header h3 {
 margin: 0; }*/
+.content-menu {
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: 10px;
+  background: #dbdbdb;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #dbdbdb 0%, #939393 100%, #727272 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dbdbdb), color-stop(100%, #939393), color-stop(100%, #727272));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #dbdbdb 0%, #939393 100%, #727272 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #dbdbdb 0%, #939393 100%, #727272 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #dbdbdb 0%, #939393 100%, #727272 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #dbdbdb 0%, #939393 100%, #727272 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#dbdbdb', endColorstr='#727272', GradientType=0);
+  /* IE6-9 */
+
+  height: 100%;
+  display: block;
+  margin-top: 1.5em;
+  margin-bottom: -1.5em;
+  overflow: hidden;
+  *zoom: 1;
+}
+.content-menu ul {
+  font-weight: bold;
+  list-style: none;
+}
+.content-menu ul li {
+  margin: 0;
+  list-style-type: none;
+  float: left;
+  display: table-cell;
+}
+.content-menu ul li a {
+  text-decoration: none;
+  color: #777;
+  text-shadow: 1px 1px #ffffff;
+}
+.content-menu ul li a:hover {
+  background: none;
+}
+.content-menu:before,
+.content-menu:after {
+  display: table;
+}
 /*  Font Awesome
     the iconic font designed for use with Twitter Bootstrap
     -------------------------------------------------------
@@ -2278,42 +2319,34 @@ ul.icons li .icon-large:before {
   float: right;
   padding-left: 5px;
 }
-.project-created-by {
+.content-header .project-created-by {
   display: inline-block;
-}
-.project-created-by,
-.project-buttons {
   vertical-align: middle;
-}
-.project-created-by {
   margin-left: 1.5em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
-.project-created-by .project-info {
+.content-header .project-created-by .project-info {
   margin: 0 24px 0 0;
 }
-.project-created-by .project-info .voting-mechanism {
+.content-header .project-created-by .project-info .voting-mechanism {
   float: left;
   margin: 0 15px 0 0;
 }
-.project-created-by .project-info .voting-mechanism .arrow i {
+.content-header .project-created-by .project-info .voting-mechanism .arrow i {
   font-size: 20px;
 }
-.project-created-by .project-info .voting-mechanism .score,
-.project-buttons {
+.content-header .project-created-by .project-info .voting-mechanism .score {
   text-align: center;
 }
-.project-created-by .project-info .voting-mechanism .score #upvotes {
+.content-header .project-created-by .project-info .voting-mechanism .score #upvotes,
+.content-header .project-created-by .project-info .voting-mechanism .score #downvotes {
   display: none;
 }
-.project-created-by .project-info .voting-mechanism .score #downvotes {
-  display: none;
-}
-.project-created-by .project-info .avatar {
+.content-header .project-created-by .project-info .avatar {
   display: inline;
 }
-.project-created-by .project-info .avatar a {
+.content-header .project-created-by .project-info .avatar a {
   width: 64px;
   height: 64px;
   float: left;
@@ -2324,16 +2357,16 @@ ul.icons li .icon-large:before {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-.project-created-by .project-info .avatar a img {
+.content-header .project-created-by .project-info .avatar a img {
   border: none;
 }
-.project-created-by .project-info .project-info-text {
+.content-header .project-created-by .project-info .project-info-text {
   float: left;
   text-shadow: 0 1px 0 white;
 }
-#step2,
-#step3 {
-  display: none;
+.content-header .project-buttons {
+  vertical-align: middle;
+  text-align: center;
 }
 #new_project textarea,
 #new_project input {
@@ -2343,16 +2376,42 @@ ul.icons li .icon-large:before {
   resize: none;
   height: 100%;
 }
+#new_project #step2,
+#new_project #step3 {
+  display: none;
+}
 .project-preview {
   float: left;
-  padding: 10px 10px 0px 10px;
   margin: 5px;
+  width: 250px;
+  max-width: 250px;
   background-color: #999;
 }
-.project-preview a,
-.project-preview a:active,
-.project-preview a:hover {
+.project-preview .project-details {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.project-preview .project-details .big,
+.project-preview .project-details .small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.project-preview .project-details .big,
+.project-preview .project-details .big a {
+  color: #444;
+}
+.project-preview .project-details .small,
+.project-preview .project-details .small a {
+  color: #666;
+}
+.project-preview .project-details a,
+.project-preview .project-details a:hover {
   text-decoration: none;
+  background: none;
+}
+.project-preview .photo img {
+  width: 100%;
 }
 body {
   color: #333;
