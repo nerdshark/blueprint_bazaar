@@ -1,7 +1,14 @@
+= content_for :content_menu do
+  | asdf
+
 = content_for :content do
   .row.content
     .content-body
       .row
         h2 Recently Created Projects
-        = render partial: 'projects/preview', collection: @projects || "There are no projects to display."
+        - if not @projects.empty?
+          = render partial: 'projects/preview', collection: @projects
+        - else
+          | There are no projects to display.&nbsp;
+          = link_to 'Create one!', new_project_path
 
