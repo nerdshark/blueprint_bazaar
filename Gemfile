@@ -5,10 +5,15 @@ gem 'rails', '3.2.8'
 gem 'mongoid'
 
 group :development do
-    gem 'rb-inotify', :require => false
-    gem 'guard-bundler'
-    gem 'guard-rails-assets'
-    gem 'pry'
+  gem 'rb-inotify', :require => false
+  gem 'guard-bundler'
+  gem 'guard-rails-assets'
+  gem 'pry'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'mongoid-rspec'
+  gem 'factory_girl_rspec'
 end
 
 group :assets do
