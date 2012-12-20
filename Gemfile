@@ -14,6 +14,7 @@ group :development do
   gem 'factory_girl_rails'
   gem 'mongoid-rspec'
   gem 'factory_girl_rspec'
+  gem 'faker'
 end
 
 group :assets do
