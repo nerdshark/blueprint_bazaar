@@ -3,6 +3,8 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'faker'
+require 'factory_girl'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -39,4 +41,5 @@ RSpec.configure do |config|
   config.before :each do
     Mongoid.default_session.collections.each { |coll| coll.drop unless /^system/.match(coll.name) }
   end
+  FactoryGirl.find_definitions
 end
