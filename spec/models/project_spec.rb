@@ -20,7 +20,7 @@ describe Project do
 
   it "is invalid with an empty, nil, or too-short description" do
     ["", nil, Faker::Lorem.characters(49)].each { |d|
-      FactoryGirl.build(:project, description: "").should_not be_valid
+      FactoryGirl.build(:project, description: d).should_not be_valid
     }
 
   end
