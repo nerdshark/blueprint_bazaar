@@ -12,7 +12,6 @@ class Project
   field :creator, type: String
 
   # referenced relations
-  #has_one :creator, :inverse_of => :user
   has_and_belongs_to_many :tags, inverse_of: nil
   belongs_to :user, inverse_of: :projects
 
@@ -47,6 +46,8 @@ class Comment
   include Mongoid::Document
   field :body
   has_one :commentor, class_name: User
+  validates_presence_of :body
+  validates_presence_of :commentor
   embedded_in :project, inverse_of: :comments
 end
 
@@ -58,6 +59,10 @@ class Step
   field :video_url
 
   embedded_in :project, inverse_of: :steps
+
+  validates_presence_of :title
+  validates_length_of :title, maximum: 50
+  validates_presence_of :body
 end
 
 class Tag
