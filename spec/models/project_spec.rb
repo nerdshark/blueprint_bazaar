@@ -1,16 +1,11 @@
 require 'spec_helper'
 
 describe Project do
-  #describe ".recent" do
-  #  it "includes the 10 newest projects" do
-  #
-  #  end
-  #end
-
   it "has a valid factory" do
     FactoryGirl.create(:project).should be_valid
   end
 
+  subject {:description}
   it "is invalid with an empty, nil, or invalid-length title" do
     ["", nil, Faker::Lorem.characters(51)].each { |t|
       FactoryGirl.build(:project, title: t).should_not be_valid
@@ -53,4 +48,27 @@ describe Project do
     Project.recently_created.should_not include project_created_10_days_ago
     Project.recently_created.should_not include project_created_12_days_ago
   end
+
+  it "embeds a valid set of steps" do
+    step = FactoryGirl.build(:step)
+    step2 = FactoryGirl.build(:step)
+    step3 = FactoryGirl.build(:step)
+    project = FactoryGirl.create(:project)
+    project.steps << step
+    project.steps << step2
+    project.steps << step3
+    project.save!
+    project.steps.should eq [step, step2, step3]
+  end
+
+  it "does not embed invalid steps" do
+    ["", nil, Faker::Lorem.characters(55)].each do |t|
+      step = FactoryGirl.build(:step, :title => t)
+      step.should_not be_valid
+      project = FactoryGirl.create(:project)
+      project.steps << step
+      project.should_not be_valid
+    end
+  end
+
 end
