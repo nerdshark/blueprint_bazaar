@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe Project do
-  it "has a valid factory" do
-    FactoryGirl.create(:project).should be_valid
-  end
-
-  subject {:description}
   it "is invalid with an empty, nil, or invalid-length title" do
     ["", nil, Faker::Lorem.characters(51)].each { |t|
       FactoryGirl.build(:project, title: t).should_not be_valid
