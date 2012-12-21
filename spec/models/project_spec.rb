@@ -58,7 +58,7 @@ describe Project do
     project.steps << step2
     project.steps << step3
     project.save!
-    project.steps.should eq [step, step2, step3]
+    project.should be_valid
   end
 
   it "does not embed invalid steps" do
