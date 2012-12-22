@@ -16,3 +16,5 @@
 
 # Ignore rspec config
 /.rspec
+
+config/initializers/secret_token.rb
