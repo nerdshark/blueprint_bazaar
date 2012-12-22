@@ -18,6 +18,7 @@ class Project
   # embedded relations
   embeds_many :steps
   embeds_many :comments
+  embeds_many :tags
 
   validates_presence_of :title
   validates_presence_of :description
@@ -68,4 +69,5 @@ end
 class Tag
   include Mongoid::Document
   field :name, type: String
+  embedded_in :project, inverse_of: steps
 end
