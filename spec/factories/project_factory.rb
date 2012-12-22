@@ -1,5 +1,4 @@
-require 'factory_girl'
-require 'faker'
+require 'spec_helper'
 
 FactoryGirl.define do
   factory :project do |p|
@@ -7,6 +6,7 @@ FactoryGirl.define do
     p.description {Faker::Lorem.paragraph}
     p.creator {Faker::Internet.user_name}
   end
+
 
   factory :step do |s|
     s.title {Faker::Lorem.characters 50}
