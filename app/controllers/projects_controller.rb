@@ -25,29 +25,49 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
-    @project = Project.new
+    if current_user
+      @project = Project.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @project }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @project }
+      end
+    else
+      respond_to do |format|
+
+      end
     end
+
+
+
   end
+
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
+    begin
+      unless (@project = Project.find(params[:id])).creator == current_user
+
+      end
+      @project
+
+    rescue
+      raise
+    end
+
   end
 
   # POST /projects
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-    @project.creator = params[:project][:creator]
+    @project.creator = current_user
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
       else
+        flash.now[:alert] = @project.errors.messages
         format.html { render action: "new" }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
