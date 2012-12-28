@@ -16,5 +16,5 @@ class User
 
 
   has_many :projects
-  belongs_to :project, :inverse_of => :creator
+  has_many :comments
 end
