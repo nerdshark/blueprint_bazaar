@@ -9,15 +9,15 @@ class Project
   field :torrent_url, type: String
   field :image_urls, type: Array
   field :featured_at, type: Time
-  field :creator, type: String
 
   # referenced relations
   has_and_belongs_to_many :tags, inverse_of: nil
-  belongs_to :user, inverse_of: :projects
+  belongs_to :creator, class_name: "User"
+  has_many :comments
 
   # embedded relations
   embeds_many :steps
-  embeds_many :comments
+
   embeds_many :tags
 
   validates_presence_of :title
@@ -46,10 +46,11 @@ end
 class Comment
   include Mongoid::Document
   field :body
-  has_one :commentor, class_name: User
+  belongs_to :commentor, class_name: "User"
   validates_presence_of :body
   validates_presence_of :commentor
-  embedded_in :project, inverse_of: :comments
+  belongs_to :project
+  belongs_to :project
 end
 
 class Step
@@ -59,7 +60,7 @@ class Step
   field :body
   field :video_url
 
-  embedded_in :project, inverse_of: :steps
+  embedded_in :project
 
   validates_presence_of :title
   validates_length_of :title, maximum: 50
@@ -69,5 +70,4 @@ end
 class Tag
   include Mongoid::Document
   field :name, type: String
-  embedded_in :project, inverse_of: steps
 end
