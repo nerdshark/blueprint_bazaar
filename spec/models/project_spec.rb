@@ -52,7 +52,6 @@ describe Project do
     project.steps << step
     project.steps << step2
     project.steps << step3
-    project.save!
     project.should be_valid
   end
 
