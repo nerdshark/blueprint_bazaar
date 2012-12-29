@@ -30,7 +30,7 @@
   .threequarter
     = form_for @project, :html => { :class => 'forms' } do |f|
       .row
-        = f.hidden_field :creator, value: current_user._id
+        /= f.hidden_field :creator, value: current_user
         #step1
           h3 Step 1: Tell us about the project!
           .row

@@ -36,7 +36,7 @@
         .project-info-text
           h3 #{@project.title}
           .project-creator
-            | Created by #{@project.creator}
+            | Created by #{@project.creator._id}
           .project-featured-on
             - if @project.featured_at
               | Featured on: #{@project.featured_at}
@@ -67,8 +67,9 @@
               img src="http://placehold.it/1280x800"
         .half
           .row
-            h3 Introduction
-            = @project.description
+            #introduction
+              h3 Introduction
+              = @project.description
       /.row
         .half
         .half
