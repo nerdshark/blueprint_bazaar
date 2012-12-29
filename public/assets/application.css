@@ -2368,6 +2368,10 @@ ul.icons li .icon-large:before {
   vertical-align: middle;
   text-align: center;
 }
+.content #introduction {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 #new_project textarea,
 #new_project input {
   width: 100%;
