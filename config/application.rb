@@ -61,7 +61,8 @@ module BlueprintBazaar
 
     # Enable the asset pipeline
     config.assets.enabled = true
-
+    #config.assets.compile = true
+    #config.app_generators.stylesheet_engine :less
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
@@ -75,6 +76,5 @@ module BlueprintBazaar
                        :request_specs => true
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
-
   end
 end
