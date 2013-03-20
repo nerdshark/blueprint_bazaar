@@ -2,6 +2,8 @@ class Project
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  resourcify
+
   field :title, type: String
   field :description, type: String
   field :upvotes, type: Integer, default: 0
@@ -45,6 +47,9 @@ end
 
 class Comment
   include Mongoid::Document
+
+  resourcify
+
   field :body
   belongs_to :commentor, class_name: "User"
   validates_presence_of :body
@@ -55,6 +60,9 @@ end
 
 class Step
   include Mongoid::Document
+
+  resourcify
+
   field :title
   field :image_urls
   field :body
@@ -69,5 +77,8 @@ end
 
 class Tag
   include Mongoid::Document
+
+  resourcify
+
   field :name, type: String
 end
