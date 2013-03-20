@@ -5,12 +5,13 @@ gem 'rails', '3.2.8'
 gem 'mongoid'
 
 group :development do
+  gem 'guard', :require => false
   gem 'rb-inotify', :require => false
-  gem 'guard-bundler'
-  gem 'guard-rails-assets'
+  gem 'guard-bundler', :require => false
+  gem 'guard-rails-assets', :require => false
   gem 'pry'
   gem 'rspec-rails'
-  gem 'guard-rspec'
+  gem 'guard-rspec', :require => false
   gem 'factory_girl_rails', require: false
   gem 'mongoid-rspec'
   gem 'factory_girl_rspec'
@@ -28,6 +29,7 @@ group :assets do
   gem "font-awesome-more", :require => "font-awesome-more"
 end
 
+gem 'rolify'
 gem 'jquery-rails'
 gem 'kube-rails'
 gem 'sorcery'
