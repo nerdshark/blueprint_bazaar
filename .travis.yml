@@ -2,9 +2,11 @@ language: ruby
 bundler_args: --without development
 rvm:
   - 1.9.3
+  - 2.0.0
 #branches:
 #  only:
 #    - master
 notifications:
   recipients:
     - mike.dillion@gmail.com
+    - dork.fish.wat@gmail.com
