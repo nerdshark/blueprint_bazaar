@@ -1,3 +1,4 @@
+{<img src="https://travis-ci.org/mikedillion/blueprint_bazaar.png?branch=add_travis-ci" alt="Build Status" />}[https://travis-ci.org/mikedillion/blueprint_bazaar]
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
