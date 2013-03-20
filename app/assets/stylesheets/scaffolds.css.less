@@ -1,6 +1,6 @@
-body {
-  color: #333;
-}
+//body {
+//  color: #333;
+//}
 body,
 p,
 ol,
@@ -58,4 +58,116 @@ div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+.rounded-top-corners(@radius: 3px) {
+  -webkit-border-top-left-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+  -moz-border-radius-topleft: @radius;
+  -moz-border-radius-topright: @radius;
+  border-top-left-radius: @radius;
+  border-top-right-radius: @radius;
+}
+
+.rounded-bottom-corners(@radius: 3px) {
+  -webkit-border-bottom-left-radius: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+  -moz-border-radius-bottomleft: @radius;
+  -moz-border-radius-bottomright: @radius;
+  border-bottom-left-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+
+body {
+  background-color:#269;
+  background-image: -moz-linear-gradient(rgba(255,255,255,0.3) 2px, transparent 2px),
+  -moz-linear-gradient(0, rgba(255,255,255,0.3) 2px, transparent 2px),
+  -moz-linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+  -moz-linear-gradient(0, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-image: -o-linear-gradient(rgba(255,255,255,0.3) 2px, transparent 2px),
+  -o-linear-gradient(0, rgba(255,255,255,0.3) 2px, transparent 2px),
+  -o-linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+  -o-linear-gradient(0, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-image: -webkit-linear-gradient(rgba(255,255,255,0.2) 2px, transparent 2px),
+  -webkit-linear-gradient(0, rgba(255,255,255,0.2) 2px, transparent 2px),
+  -webkit-linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+  -webkit-linear-gradient(0, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-size:50px 50px, 50px 50px, 10px 10px,10px 10px;
+  background-position: -18px -20px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.page {
+  overflow: auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+
+@content-box-shadow: inset 0 0 0 4px #eee;
+.content-header, .content {
+  background-color: #eee;
+  height: 100%;
+  display: block;
+  margin-top: 1.5em;
+//margin-bottom: 1.5em;
+//border: 1px solid #eee;
+  -webkit-box-shadow: @content-box-shadow;
+  -moz-box-shadow: @content-box-shadow;
+  box-shadow: @content-box-shadow;
+  overflow: hidden;
+  *zoom: 1;
+}
+/*.content_header h1, .content_header h2, .content_header h3 {
+margin: 0; }*/
+
+//@content-menu-background: #ccc;
+//@content-menu-border-color: #ccc;
+@content-menu-border-radius: 3px;
+//@content-menu-box-shadow: inset 0 0 0 4px #ccc;
+
+.content-menu {
+
+}
+.content-menu {
+  .rounded-top-corners;
+  padding: 10px;
+  background: #dbdbdb; /* Old browsers */
+  background: -moz-linear-gradient(top,  #dbdbdb 0%, #939393 100%, #727272 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dbdbdb), color-stop(100%,#939393), color-stop(100%,#727272)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #dbdbdb 0%,#939393 100%,#727272 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #dbdbdb 0%,#939393 100%,#727272 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #dbdbdb 0%,#939393 100%,#727272 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #dbdbdb 0%,#939393 100%,#727272 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#727272',GradientType=0 ); /* IE6-9 */
+
+  height: 100%;
+  display: block;
+  margin-top: 1.5em;
+  margin-bottom: -1.5em;
+  overflow: hidden;
+  *zoom: 1;
+  ul {
+    font-weight: bold;
+    list-style: none;
+    li {
+      margin: 0;
+      list-style-type: none;
+      float: left;
+      display: table-cell;
+      a {
+        text-decoration: none;
+        color: #777;
+        text-shadow: 1px 1px #ffffff;
+      }
+      a:hover {
+        background: none;
+      }
+    }
+  }
+}
+
+.content-menu:before, .content-menu:after {
+  display: table;
 }
