@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem "rails", "~> 3.2.13"
 #gem 'sqlite3'
 gem 'mongoid'
 
@@ -9,10 +9,10 @@ group :development do
   gem 'rb-inotify', :require => false
   gem 'guard-bundler', :require => false
   gem 'guard-rails-assets', :require => false
-  gem 'pry'
+  gem 'pry', :require => false
   gem 'rspec-rails'
   gem 'guard-rspec', :require => false
-  gem 'factory_girl_rails', require: false
+  gem 'factory_girl_rails'
   gem 'mongoid-rspec'
   gem 'factory_girl_rspec'
   gem 'faker'
@@ -20,18 +20,19 @@ end
 
 group :assets do
   gem 'less'
-  gem 'less-rails',   '~> 2.2.3'
+  gem 'less-rails'
+  gem 'therubyracer'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bluecloth'
   gem 'slim'
   gem 'slim-rails'
   gem 'uglifier', '>= 1.0.3'
   gem "font-awesome-more", :require => "font-awesome-more"
+  gem 'jquery-rails'
+  gem 'kube-rails'
 end
 
 gem 'rolify'
-gem 'jquery-rails'
-gem 'kube-rails'
 gem 'sorcery'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
